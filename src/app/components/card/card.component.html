@@ -1,0 +1,16 @@
+<mat-card appearance="outlined" class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ image.author }}</mat-card-title>
+    <mat-card-subtitle>Id.: {{ image.id }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{ image.download_url }}" alt="{{ image.url }}" />
+  <mat-card-content>
+    <p>
+      Size: {{ image.width }} x {{ image.height }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="card-actions">
+    <a mat-flat-button [routerLink]="['/image', image.id]">READ MORE</a>
+  </mat-card-actions>
+</mat-card>
