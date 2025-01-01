@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -19,6 +19,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ImageComponent } from './components/image/image.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { TableComponent } from './components/table/table.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,13 @@ import { TableComponent } from './components/table/table.component';
     MatListModule,
     MatProgressSpinnerModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent]
