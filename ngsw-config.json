@@ -34,8 +34,8 @@
         "https://picsum.photos/**"
       ],
       "cacheConfig": {
-        "maxSize": 10,
-        "maxAge": "1h",
+        "maxSize": 31,
+        "maxAge": "1h30m",
         "timeout": "1s",
         "strategy": "freshness"
       }
