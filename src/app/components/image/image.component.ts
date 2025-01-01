@@ -21,11 +21,11 @@ export class ImageComponent {
   ) {
     const identifier = this.activatedRoute.snapshot.paramMap.get('id');
     this.imagesService.getImageById(identifier).subscribe((image) => {
-      console.log(image);
       if (!image) {
         this.router.navigateByUrl('/');
+      } else {
+        this.image = image;
       }
-      this.image = image;
     });
   }
 }

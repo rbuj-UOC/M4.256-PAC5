@@ -6,11 +6,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardComponent } from './components/card/card.component';
@@ -19,7 +19,6 @@ import { HomeComponent } from './components/home/home.component';
 import { ImageComponent } from './components/image/image.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { TableComponent } from './components/table/table.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -39,7 +38,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     MatCardModule,
     MatExpansionModule,
     MatIconModule,
-    MatListModule,
     MatProgressSpinnerModule,
     MatTableModule,
     MatToolbarModule,
