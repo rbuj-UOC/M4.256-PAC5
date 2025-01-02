@@ -11,5 +11,4 @@ export class LoadingService {
   public isLoading(state: boolean): void {
     this.loading.next(state);
   }
-  constructor() {}
 }
