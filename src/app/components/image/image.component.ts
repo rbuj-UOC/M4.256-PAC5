@@ -9,7 +9,7 @@ import { ImagesService } from '../../services/images.service';
   styleUrl: './image.component.css'
 })
 export class ImageComponent {
-  image!: Image;
+  image: Image | undefined;
   isDetailsVisible = false;
 
   constructor(
@@ -20,12 +20,18 @@ export class ImageComponent {
     private router: Router
   ) {
     const identifier = this.activatedRoute.snapshot.paramMap.get('id');
-    this.imagesService.getImageById(identifier).subscribe((image) => {
-      if (!image) {
+    this.imagesService.getImageById(identifier).subscribe(
+      (image) => {
+        if (!image) {
+          this.router.navigateByUrl('/');
+        } else {
+          this.image = image;
+        }
+      },
+      () => {
+        alert("Can't get image details!");
         this.router.navigateByUrl('/');
-      } else {
-        this.image = image;
       }
-    });
+    );
   }
 }
