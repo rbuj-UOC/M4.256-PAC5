@@ -161,6 +161,53 @@ En iOS no se pueden instalar PWA, no obstante en la pantalla de inicio se puede 
 
 Angular genera el archivo de configuración para el service worker llamado [ngsw-config.json](ngsw-config.json). Este archivo especifica cómo el service worker debe cachear los archivos y gestionar las actualizaciones de datos.
 
+# Parámetros para el service worker
+
+## assetGroups
+
+Para almacenar los datos de la aplicación y de CDNs (por ejemplo fuentes de Google Fonts).
+
+```
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.csr.html",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
+        ],
+        "urls": [
+          "https://fonts.googleapis.com/**",
+          "https://fonts.gstatic.com/**"
+        ]
+      }
+    }
+  ],
+```
+
+En la siguiente captura se puede ver como el ServiceWorker también gestiona las fuentes (```type: font``` y ```size: ServiceWorker```):
+
+![title](img/fonts.avif)
+
+## dataGroups
+
+Para almacenar los datos de la API.
+
 ```
   "dataGroups": [
     {
