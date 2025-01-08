@@ -1,4 +1,7 @@
-# M4256PAC5
+[![Node.js CI](https://github.com/rbuj-UOC/M4.256-PAC5/actions/workflows/node.js.yml/badge.svg)](https://github.com/rbuj-UOC/M4.256-PAC5/actions/workflows/node.js.yml)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/de97d8cd-5af8-43cb-8cdb-88e07cea126e/deploy-status)](https://app.netlify.com/sites/kaleidoscopic-tartufo-533abf/deploys)
+
+# M4.256-PAC5
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
@@ -25,7 +28,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/de97d8cd-5af8-43cb-8cdb-88e07cea126e/deploy-status)](https://app.netlify.com/sites/kaleidoscopic-tartufo-533abf/deploys)
