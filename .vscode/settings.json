@@ -1,4 +1,5 @@
 {
+  "material-icon-theme.activeIconPack": "angular",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.documentSelectors": [
     "**/*.html"
