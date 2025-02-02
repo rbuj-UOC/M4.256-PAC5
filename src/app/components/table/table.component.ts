@@ -3,6 +3,8 @@ import { Image } from '../../models/image.interface';
 
 @Component({
   selector: 'app-table',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })

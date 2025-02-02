@@ -5,6 +5,8 @@ import { ImagesService } from '../../services/images.service';
 
 @Component({
   selector: 'app-image',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './image.component.html',
   styleUrl: './image.component.css'
 })

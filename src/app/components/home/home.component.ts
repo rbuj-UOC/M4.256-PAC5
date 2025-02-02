@@ -6,6 +6,8 @@ import { LoadingService } from '../../services/loading.service';
 
 @Component({
   selector: 'app-home',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

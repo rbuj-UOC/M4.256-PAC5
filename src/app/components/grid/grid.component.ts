@@ -10,6 +10,8 @@ import { Image } from '../../models/image.interface';
 
 @Component({
   selector: 'app-grid',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './grid.component.html',
   styleUrl: './grid.component.css',
   animations: [
