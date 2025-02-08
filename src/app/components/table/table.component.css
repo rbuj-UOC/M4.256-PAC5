@@ -1,4 +1,16 @@
 .mat-mdc-row:hover {
-  background-color: #7393B3 !important;
+  background-color:var(--mat-sys-secondary);
+  color: var(--mat-sys-on-secondary);
   cursor: pointer;
+}
+
+.mat-mdc-table {
+  margin: 16px 0;
+  background: var(--mat-sys-tertiary-container);
+  color: var(--mat-sys-on-tertiary-container);
+}
+
+.mat-mdc-header-row {
+  background: var(--mat-sys-tertiary);
+  color: var(--mat-sys-on-tertiary);
 }

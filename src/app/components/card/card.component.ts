@@ -6,7 +6,7 @@ import { Image } from '../../models/image.interface';
   // eslint-disable-next-line @angular-eslint/prefer-standalone
   standalone: false,
   templateUrl: './card.component.html',
-  styleUrl: './card.component.css'
+  styleUrl: './card.component.scss'
 })
 export class CardComponent {
   @Input() public image!: Image;

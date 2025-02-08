@@ -1,5 +1,5 @@
 <app-spinner *ngIf="loading$ | async"></app-spinner>
-<mat-toolbar color="primary">
+<mat-toolbar>
   <span class="toolbar-spacer"></span>
   <button
     mat-mini-fab
@@ -16,5 +16,7 @@
     <mat-icon>grid_view</mat-icon>
   </button>
 </mat-toolbar>
-<app-table *ngIf="btnActive === 1" [images]="images"></app-table>
-<app-grid *ngIf="btnActive === 2" [images]="images"></app-grid>
+<div layout="column" class="container">
+  <app-table *ngIf="btnActive === 1" [images]="images"></app-table>
+  <app-grid *ngIf="btnActive === 2" [images]="images"></app-grid>
+</div>

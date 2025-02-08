@@ -1,7 +1,29 @@
 .active {
-  background-color: grey;
+  background: var(--mat-sys-secondary);
+  color: var(--mat-sys-on-secondary);
 }
 
 .toolbar-spacer {
   flex: 1 1 auto;
+}
+
+.container {
+  margin: 0;
+  @media (min-width: 760px) {
+    margin: 0 16px;
+  }
+
+  @media (min-width: 960px) {
+    margin: 0 20px;
+  }
+
+  @media (min-width: 1280px) {
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+}
+
+mat-toolbar {
+  background: var(--mat-sys-tertiary-container);
+  color: var(--mat-sys-on-tertiary-container);
 }

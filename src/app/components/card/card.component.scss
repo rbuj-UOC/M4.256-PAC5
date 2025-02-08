@@ -1,0 +1,15 @@
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+.example-card {
+  margin: 4px;
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('/img/shiba1.avif');
+  background-size: cover;
+}
+
+mat-card {
+  background: var(--mat-sys-secondary-container);
+  color: var(--mat-sys-on-surface);
+}
