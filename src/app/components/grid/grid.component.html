@@ -1,3 +1,5 @@
 <div class="content" [@fadeInOut]>
-  <app-card [image]="image" *ngFor="let image of images"></app-card>
+  @for (image of images; track image.id) {
+    <app-card [image]="image"></app-card>
+  }
 </div>
