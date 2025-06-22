@@ -3,14 +3,17 @@
 
 html {
   color-scheme: light dark;
-  @include mat.theme((
-    color: mat.$red-palette,
-    typography: Roboto,
-    density: 0
-  ));
+  @include mat.theme(
+    (
+      color: mat.$red-palette,
+      typography: Roboto,
+      density: 0
+    )
+  );
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 

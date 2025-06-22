@@ -19,6 +19,6 @@
   z-index: 999998;
 }
 
-.center-container>mat-spinner {
+.center-container > mat-spinner {
   z-index: 999999;
 }

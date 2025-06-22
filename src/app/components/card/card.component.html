@@ -6,9 +6,7 @@
   </mat-card-header>
   <img mat-card-image src="{{ image.download_url }}" alt="{{ image.url }}" />
   <mat-card-content>
-    <p>
-      Size: {{ image.width }} x {{ image.height }}
-    </p>
+    <p>Size: {{ image.width }} x {{ image.height }}</p>
   </mat-card-content>
   <mat-card-actions class="card-actions">
     <a mat-flat-button [routerLink]="['/image', image.id]">READ MORE</a>

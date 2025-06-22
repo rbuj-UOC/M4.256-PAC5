@@ -1,8 +1,9 @@
 # URLs
-| Tipo de URL | URL |
-| ----------- | --- |
-| Código fuente | https://github.com/rbuj-UOC/M4.256-PAC5 |
-| Producción | https://kaleidoscopic-tartufo-533abf.netlify.app/ |
+
+| Tipo de URL   | URL                                               |
+| ------------- | ------------------------------------------------- |
+| Código fuente | https://github.com/rbuj-UOC/M4.256-PAC5           |
+| Producción    | https://kaleidoscopic-tartufo-533abf.netlify.app/ |
 
 # Auditoria PWA con Lighthouse
 
@@ -11,17 +12,20 @@
 En el [informe del sitio web](kaleidoscopic-tartufo-533abf.netlify.app_2025-01-01_20-39-25.report.html) generado con la última versión de Lighthouse no aparece la categoría PWA, ya que se [eliminó](https://github.com/GoogleChrome/lighthouse/pull/15455) en la versión [12.0.0](https://github.com/GoogleChrome/lighthouse/releases/tag/v12.0.0) que se publicó el pasado 23 de abril de 2024.
 
 Instalación de Lighthouse:
+
 ```
 npm install -g lighthouse
 ```
 
 Versión de Lighthouse:
+
 ```
 lighthouse --version
 12.3.0
 ```
 
 Generación del informe:
+
 ```
 lighthouse https://kaleidoscopic-tartufo-533abf.netlify.app/
 ```
@@ -82,13 +86,13 @@ La aplicación se instala en la carpeta de aplicaciones del usuario:
 ![title](img/path1.avif)
 
 - Paso 2 para obtener la ruta de instalación de la aplicación
-![title](img/path2.avif)
+  ![title](img/path2.avif)
 
 - Paso 3 para obtener la ruta de instalación de la aplicación
 
 ![title](img/path3.avif)
 
-*Si se traslada a la papelera también se desinstala la aplicación*
+_Si se traslada a la papelera también se desinstala la aplicación_
 
 ![title](img/uninstall2.avif)
 
@@ -156,7 +160,6 @@ En iOS no se pueden instalar PWA, no obstante en la pantalla de inicio se puede 
 
 <img src="img/IMG_0063.avif" alt="Description" width="300">
 
-
 # Parámetros para el service worker
 
 Angular genera el archivo de configuración para el service worker llamado [ngsw-config.json](ngsw-config.json). Este archivo especifica cómo el service worker debe cachear los archivos y gestionar las actualizaciones de datos.
@@ -200,7 +203,7 @@ Para almacenar los datos de la aplicación y de CDNs (por ejemplo fuentes de Goo
   ],
 ```
 
-En la siguiente captura se puede ver como el ServiceWorker también gestiona las fuentes (```type: font``` y ```size: ServiceWorker```):
+En la siguiente captura se puede ver como el ServiceWorker también gestiona las fuentes (`type: font` y `size: ServiceWorker`):
 
 ![title](img/fonts.avif)
 
@@ -225,6 +228,7 @@ Para almacenar los datos de la API.
   ]
 
 ```
+
 - urls: se almacenan en cache todas las respuestas del sitio https://picsum.photos/
 - cacheConfig: configura la estrategia para las llamadas a las apis.
   - maxSize: es el número máximo de respuestas que se guardaran en caché. Su valor es 31: una para obtener el listado de las images, que contiene 30 elementos, y 30 más para obtener los detalles de las 30 imágenes.
@@ -235,6 +239,6 @@ Para almacenar los datos de la API.
     - h: horas
     - d: días
   - timeout: es el tiempo máximo que se espera para obtener una respuesta, si no hay respuesta se busca la información en la caché. Por ejemplo, un segundo.
-  - strategy: es la estrategia de caché, por ejemplo ```freshness```.
-     - Con ```freshness``` primero consulta a internet y después la caché: ya que nos interesa tener los últimos datos actualizados, y si por lo que fuese no hubiera internet, por lo menos, se puede seguir utilizando la aplicación con los datos de la caché, aunque estos no fueran los últimos.
-     - Con ```performance``` se optimiza la actualización de los datos, obteniendo preferentemente los datos solicitados de internet. Solo si se agota el tiempo de espera, según el valor de timeout, la solicitud vuelve a la memoria caché. Esto resulta útil para recursos que cambian con frecuencia.
+  - strategy: es la estrategia de caché, por ejemplo `freshness`.
+    - Con `freshness` primero consulta a internet y después la caché: ya que nos interesa tener los últimos datos actualizados, y si por lo que fuese no hubiera internet, por lo menos, se puede seguir utilizando la aplicación con los datos de la caché, aunque estos no fueran los últimos.
+    - Con `performance` se optimiza la actualización de los datos, obteniendo preferentemente los datos solicitados de internet. Solo si se agota el tiempo de espera, según el valor de timeout, la solicitud vuelve a la memoria caché. Esto resulta útil para recursos que cambian con frecuencia.
