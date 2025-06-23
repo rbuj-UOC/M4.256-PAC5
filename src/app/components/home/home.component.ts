@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Image } from '../../models/image.interface';
 import { ImagesService } from '../../services/images.service';
@@ -12,15 +12,15 @@ import { LoadingService } from '../../services/loading.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
+  private imagesService = inject(ImagesService);
+  private loadingService = inject(LoadingService);
+
   btnActive: number;
 
   images: Image[] = [];
   loading$: Observable<boolean>;
 
-  constructor(
-    private imagesService: ImagesService,
-    private loadingService: LoadingService
-  ) {
+  constructor() {
     this.loading$ = this.loadingService.loading.asObservable();
     this.btnActive = 1;
   }

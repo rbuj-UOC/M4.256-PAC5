@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Image } from '../../models/image.interface';
 import { ImagesService } from '../../services/images.service';
@@ -11,16 +11,14 @@ import { ImagesService } from '../../services/images.service';
   styleUrl: './image.component.css'
 })
 export class ImageComponent {
+  private imagesService = inject(ImagesService);
+  private activatedRoute = inject(ActivatedRoute);
+  private router = inject(Router);
+
   image: Image | undefined;
   isDetailsVisible = false;
 
-  constructor(
-    private imagesService: ImagesService,
-    // to read parameter from url
-    private activatedRoute: ActivatedRoute,
-    // to redirect the user of this view if we don't have a valid identificador
-    private router: Router
-  ) {
+  constructor() {
     const identifier = this.activatedRoute.snapshot.paramMap.get('id');
     this.imagesService.getImageById(identifier).subscribe(
       (image) => {

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { finalize, Observable, shareReplay } from 'rxjs';
 import { Image } from '../models/image.interface';
 import { LoadingService } from './loading.service';
@@ -8,10 +8,9 @@ import { LoadingService } from './loading.service';
   providedIn: 'root'
 })
 export class ImagesService {
-  constructor(
-    private http: HttpClient,
-    private loadingService: LoadingService
-  ) {}
+  private http = inject(HttpClient);
+  private loadingService = inject(LoadingService);
+
 
   getAllImages(): Observable<Image[]> {
     this.loadingService.isLoading(true);
